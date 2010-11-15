@@ -54,7 +54,12 @@
         auto-animation of flashdata 'message' when exists <a href="#note-4">(4)</a>
     </li>
 </ul>
-
+<h1>Todos:</h1>
+<ul>
+    <li>
+        CRUD for admin users?
+    </li>
+</ul>
 <hr />
 
 <h2> Notes </h2>
