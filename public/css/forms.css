@@ -1,0 +1,25 @@
+.form_div {
+    background: #333;
+    padding: 5px;
+}
+
+label
+{
+  display: block;
+  float: left;
+  width: 193px;
+  text-align: right;
+  padding-right: 7px;
+  margin-bottom: 7px;
+}
+
+fieldset
+{
+    margin: 15px;
+    padding: 20px;
+}
+
+legend
+{
+    padding: 0 10px;
+}

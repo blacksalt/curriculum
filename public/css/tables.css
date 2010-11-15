@@ -1,0 +1,39 @@
+table
+{
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+table a:link, table a:visited {
+    text-decoration: none;
+    border-bottom: 1px solid #C0DF2C;
+}
+
+table a:hover {
+    border-bottom: none;
+}
+
+thead th
+{
+    color: white;
+    border-bottom: white 1px solid;
+}
+
+thead th, tbody td {
+    padding: 0 10px;
+}
+
+tbody tr
+{
+    color: white;
+    font-size: 14px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(2n)
+{
+    background-color: #444;
+}
