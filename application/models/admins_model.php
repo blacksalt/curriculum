@@ -3,20 +3,25 @@
 class Admins_model extends Model
 {
     # TODO: Used by gate/auth and $this->change_password
-    function auth ( $data )
+   function auth ( $data )
     {
         if ( ! isset($data) ) return NULL;
         $this->db->where('username',$data['username']);
         $query = $this->db->get('admin');
         $result = $query->row();
-        $hash = $result->password;
-        $salt = $result->salt;
-        if ( sha1 ($data['password'] . $salt) != $hash ) return NULL;
-        else 
-        {
-            unset($result->password);
-            return $result;
-        }
+        if($result != NULL){
+		   $hash = $result->password;
+		   $salt = $result->salt;
+		   if ( sha1 ($data['password'] . $salt) != $hash ) return NULL;
+		   else 
+		   {
+		       unset($result->password);
+		       return $result;
+		   }
+	}
+	else{
+		return NULL;
+	}
     }
 
     # TODO: Used by admin/change_password

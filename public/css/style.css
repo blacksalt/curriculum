@@ -1,9 +1,117 @@
-br
-{
-  clear: both;
+body {
+	background-color:#fff;
+	width:4500px;
+	margin:auto; padding:0;
+	margin-bottom: 10px;
+	margin-top: 90px;
+	background-color:#e6e6e6;
+	font:13px Helvetica, Tahoma, sans-serif;
 }
+#header {
+	background-color: #7B1113;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	height:50px;
+	width: 100%;
+	z-index: 3;
+}
+.title{
+	font-size: 21px;
+	color: #fff;
+	line-height: 15px;
+	text-decoration: none;
+	text-align: center;
+	font-style: normal;
+	font-weight: bold;
+}
+#notification{
+	top: 50px;
+	left: 0px;
+	position: fixed;
+	height:40px;
+	width: 100%;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 35px;
+	z-index: 3;
+}
+#content{
+	background-color:#e6e6e6;
+	width:4700px;
+	padding: 0px 80px 20px 200px;
+	left: -180px;
+	border-left: solid 5px #888;
+	border-right: solid 5px #888;
+	cursor: move;
+}
+#container{
+	min-height: 650px;
+}
+.column {
+	margin-left: 0.25%;
+	width: 4.35%;
+	float: left;
+}
+.column.first {margin-left: 0; }
 
-.message
-{
-    text-align: center;
+/* Sortable items */
+
+.sortable-list {
+	background-color: #FFAD00;
+	list-style: none;
+	margin: 0;
+	min-height: 50px;
+	padding: 7px;
+    -moz-border-radius: 10px; /* for firefox */
+    -webkit-border-radius: 10px; /* for safari & chrome */
+    border-radius: 10px;
+}
+.sortable-list.Summer{background-color:#FFCC73}
+
+.sortable-item {
+	background-color: #FFF;
+	border: 1px solid #999;
+	cursor: move;
+	display: block;
+	/*font-weight: bold;*/
+	font-size: 12px;
+	margin-bottom: 5px;
+	padding: 5px 2px;
+	color: #000;
+	text-align: center;
+}
+.semheader, .units {
+	font-size: 13px;
+	color: #000;
+	line-height: 0px;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+}
+.units{
+	color: #555;
+	font-weight: normal;
+}
+.prereq{
+	text-align: left;
+	font-weight: normal;
+	color: #444;
+}
+#footer{
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+	height:25px;
+	width: 100%;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+	font-size: 10px;
+	line-height:25px;
+	z-index: 3;
 }
