@@ -153,11 +153,15 @@ $(document).ready(function(){
 	//		revert: "invalid"
 	//	});
 	$("li.sortable-item").dblclick( function () { 
-		$( "li.sortable-item" ).draggable({
+		$(this).draggable('enable');
+		$(this).draggable({
+			//start: function(event, ui){$(this).draggable('enable')},
 			connectToSortable: ".sortable-list",
 			helper: "clone",
 			revert: "invalid",
-				
+			stop: function(event, ui) {
+				$(this).draggable('disable');
+			}
 				//$(this).addClass('fade');
 				//$(ui.item).addClass('clone');
 				//$(ui.item).css({"font-weight":"bold"});
