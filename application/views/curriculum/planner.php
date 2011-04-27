@@ -160,6 +160,7 @@ $(document).ready(function(){
 				$(this).draggable('disable');
 			}
 		});
+		alert(this.attr('id'));
 	});
 	$('.sortable-list').sortable({
 		connectWith: '.sortable-list',
@@ -171,10 +172,6 @@ $(document).ready(function(){
 			if(!test(ui.item.attr('id'), "sem1-1")){
 				$(ui.sender).sortable('cancel');			
 			}
-			//if($(this).attr('style')!="display: block;"){
-				//$(this).css({"font-weight":"bold"});
-				//alert("this is a clone");
-			//}
 		}
 	});
 	$('ul#sem1-2').sortable({
