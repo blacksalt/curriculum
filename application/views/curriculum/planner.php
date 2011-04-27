@@ -53,11 +53,12 @@
 <div id="footer">Footer here. CopyLeft ______. | Other menu | Other stuff |</div>
 
 <script type="text/javascript">
-function subject(name,sem, unit, prereq){
+function subject(name,sem, unit, prereq, instance){
 	this.name=name;
 	this.sem=sem;
 	this.unit=unit;
 	this.prereq=prereq;
+	this.instance = instance;
 }
 
 function computeUnits(sem){
@@ -88,9 +89,10 @@ function computeUnits(sem){
 					foreach($subject['prereqs'] as $prereq){
 						$prereqs = $prereqs .$prereq['alias'] .',';
 					}
-					echo substr($prereqs, 0, -1) .')';
+					echo substr($prereqs, 0, -1) .'), ';
 				}
-				else{ echo $prereqs .')'; }
+				else{ echo $prereqs .'), '; }
+				echo '1';
 				echo '); ' . PHP_EOL;;
 				$subjects = $subjects .$subject['alias'] .',';
 			}
@@ -101,8 +103,8 @@ function computeUnits(sem){
 	echo '</script>';
 ?>
 
-//check if prereqs are satisfied
 <script>
+//check if prereqs are satisfied
 function test(subject, sem){
 	for(j=0; j<subjects.length; j++){
 		if(subjects[j].name==subject){
@@ -147,35 +149,18 @@ $(document).ready(function(){
 	$('#content').draggable({ 
 		axis: "x",
 	});
-	//$( "li.sortable-item" ).draggable({
-	//		connectToSortable: ".sortable-list",
-	//		helper: "clone",
-	//		revert: "invalid"
-	//	});
+	
 	$("li.sortable-item").dblclick( function () { 
 		$(this).draggable('enable');
 		$(this).draggable({
-			//start: function(event, ui){$(this).draggable('enable')},
 			connectToSortable: ".sortable-list",
 			helper: "clone",
 			revert: "invalid",
 			stop: function(event, ui) {
 				$(this).draggable('disable');
 			}
-				//$(this).addClass('fade');
-				//$(ui.item).addClass('clone');
-				//$(ui.item).css({"font-weight":"bold"});
 		});
-		//$( "li.sortable-item" ).draggable("disable");
-		//var helper = $( ".li.sortable-item" ).draggable( "option", "helper");
-		//$("ui.draggable").css({"font-weight":"bold"});
 	});
-/*
-	$("li.sortable-item").dblclick( function () { 
-		var helper = $( ".li.sortable-item" ).draggable( "option", "helper", 'clone' );
-		helper.css({"font-weight":"bold"});
-		
-	});*/
 	$('.sortable-list').sortable({
 		connectWith: '.sortable-list',
 	});
